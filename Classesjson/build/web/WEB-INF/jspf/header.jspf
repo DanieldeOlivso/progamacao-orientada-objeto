@@ -1,0 +1,13 @@
+<%-- any content can be specified here e.g.: --%>
+<%@page import="model.Data" %>
+<%@ page pageEncoding="UTF-8" %>
+<%
+    Data niverDan = new Data(25,05,2001);
+%>
+<h1>Daniel de Oliveira Soares</h1>
+<h2>Data de Nascimento: <%= niverDan.getData() %></h2>
+<a href="index.jsp">Início</a> || 
+<a href="data.jsp">Classe Data</a> || 
+<a href="contatos.jsp">Contatos</a> || 
+<a href="horario.jsp">Horário</a>
+<hr/>
