@@ -1,0 +1,28 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+<%
+    if(request.getParameter("login") != null){
+        session.setAttribute("user", request.getParameter("user"));
+        //response.sendRedirect(request.getRequestURI());
+    }
+     if(request.getParameter("logout") != null){
+        session.removeAttribute("user");
+        //response.sendRedirect(request.getRequestURI());
+    }
+%>
+<h1>DanielAcessAPP</h1>
+<%if (session.getAttribute("user") == null) {%>
+<form>
+    NOME <input type="text" name="user">
+    <input type="submit" name="login" value="LOGAR">
+</form>
+<%}else{%>
+<form>
+    Bem-vindo(a), <%= session.getAttribute("user")%>
+    <input type="submit" name="logout" value="DESLOGAR">
+</form>
+<%}%>
+<a href="index.jsp">Home</a> || 
+<a href="my_history.jsp">My History</a> || 
+<a href="history.jsp">History</a>
+<hr>
